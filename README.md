@@ -5,6 +5,8 @@
 - Proveer un sistema con criterios de búsqueda (por nombre que contengan un valor, por color, por edad mayor o menor que y por id_animal).
 ## Interfaz del front
 - Los colores se envían como String.
+- El front necesita contar con una lista de posibles colores.
+- El buscador del front no conoce todos los endpoints del back.
 ## Base de datos
 Tabla animales. 
 
