@@ -2,6 +2,7 @@ package ar.com.xeven.crudrefugiospring.services;
 
 import ar.com.xeven.crudrefugiospring.entities.Animal;
 import ar.com.xeven.crudrefugiospring.repos.AnimalRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,11 +10,9 @@ import java.util.List;
 
 @Service
 public class AnimalService {
-    private final AnimalRepository animalRepository;
+
     @Autowired
-    public AnimalService(AnimalRepository animalRepository) {
-        this.animalRepository = animalRepository;
-    }
+    private AnimalRepository animalRepository;
 
     public List<Animal> getAnimales(){
         return animalRepository.findAll();

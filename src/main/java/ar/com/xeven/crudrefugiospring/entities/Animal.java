@@ -1,27 +1,31 @@
 package ar.com.xeven.crudrefugiospring.entities;
 
+
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name="animales")
+@Table(name = "animales")
+
+
 public class Animal {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer idanimal;
-    protected String nombre;
-    protected int edad;
-    protected String color;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "incrementDomain")
+    @GenericGenerator(name = "incrementDomain", strategy = "increment")
+    private Integer idanimal;
+    private String nombre;
+    private int edad;
+    private String color;
 
     public Animal() {
+
     }
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "idanimal=" + idanimal +
-                ", nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", color='" + color + '\'' +
-                '}';
+    public Animal( String nombre, int edad, String color) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.color = color;
     }
 
     public Integer getIdanimal() {

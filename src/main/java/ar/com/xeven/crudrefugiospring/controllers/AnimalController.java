@@ -2,6 +2,7 @@ package ar.com.xeven.crudrefugiospring.controllers;
 
 import ar.com.xeven.crudrefugiospring.entities.Animal;
 import ar.com.xeven.crudrefugiospring.services.AnimalService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,12 +16,8 @@ import java.util.Optional;
 @RequestMapping("animales")
 public class AnimalController {
 
-    private final AnimalService animalService;
-
     @Autowired
-    public AnimalController(AnimalService animalService) {
-        this.animalService = animalService;
-    }
+    private AnimalService animalService;
 
     @GetMapping
     public String getAnimales(Model modelo){
