@@ -4,6 +4,7 @@ import ar.com.xeven.crudrefugiospring.entities.Animal;
 import ar.com.xeven.crudrefugiospring.services.AnimalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -14,7 +15,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("animales")
-public class AnimalController {
+public class AnimalController implements ErrorController {
 
     @Autowired
     private AnimalService animalService;
