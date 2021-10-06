@@ -1,5 +1,4 @@
 package ar.com.xeven.crudrefugiospring.controllers;
-
 import ar.com.xeven.crudrefugiospring.entities.Animal;
 import ar.com.xeven.crudrefugiospring.services.AnimalService;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +40,7 @@ public class AnimalController implements ErrorController {
             }
         return "redirect:/animales";
     }
+
     @GetMapping("/nombre/{nombre}")
     public String buscarPorNombre(Model modelo, @PathVariable String nombre){
         modelo.addAttribute("colores",animalService.getColores());
